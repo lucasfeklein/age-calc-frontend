@@ -13,13 +13,51 @@ function App() {
     days: null,
   });
 
+  const [validation, setValidation] = useState({
+    day: true,
+    month: true,
+    year: true,
+  });
+
   const { day, month, year } = dateObject;
 
   const handleInput = (e) => {
+    const { name, value } = e.target;
     setDateObject((prevDate) => ({
       ...prevDate,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+  };
+
+  const validateInput = (name, value) => {
+    switch (name) {
+      case "day":
+        // Validate day input (1 to 31)
+        return (
+          /^\d{1,2}$/.test(value) &&
+          parseInt(value, 10) >= 1 &&
+          parseInt(value, 10) <= 31
+        );
+
+      case "month":
+        // Validate month input (1 to 12)
+        return (
+          /^\d{1,2}$/.test(value) &&
+          parseInt(value, 10) >= 1 &&
+          parseInt(value, 10) <= 12
+        );
+
+      case "year":
+        // Validate year input (a valid range for your use case)
+        return (
+          /^\d{4}$/.test(value) &&
+          parseInt(value, 10) >= 1900 &&
+          parseInt(value, 10) <= 2100
+        );
+
+      default:
+        return true;
+    }
   };
 
   const handleClick = () => {
