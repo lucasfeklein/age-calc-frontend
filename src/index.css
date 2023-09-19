@@ -78,6 +78,14 @@ h2 {
   font-style: italic;
 }
 
+.invalid-alert {
+  color: hsl(0, 100%, 67%);
+  letter-spacing: normal;
+  font-style: italic;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
 span {
   color: hsl(259, 100%, 65%);
   font-style: normal;
