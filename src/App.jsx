@@ -16,15 +16,15 @@ function App() {
             <input type="number" />
           </label>
         </div>
-        <div>
+        <div className="text-container">
           <h2>
-            <span>--</span>years
+            <span>-- </span>years
           </h2>
           <h2>
-            <span>--</span>months
+            <span>-- </span>months
           </h2>
           <h2>
-            <span>--</span>days
+            <span>-- </span>days
           </h2>
         </div>
       </div>
