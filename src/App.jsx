@@ -1,19 +1,51 @@
+import { useState } from "react";
+
 function App() {
+  const [dateObject, setDateObject] = useState({
+    day: "",
+    month: "",
+    year: "",
+  });
+
+  const { day, month, year } = dateObject;
+
+  const handleInput = (e) => {
+    setDateObject((prevDate) => ({
+      ...prevDate,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div className="container">
       <div className="calc-container">
         <div className="input-container">
           <label>
             DAY
-            <input type="number" />
+            <input
+              value={day}
+              onChange={handleInput}
+              name="day"
+              type="number"
+            />
           </label>
           <label>
             MONTH
-            <input type="number" />
+            <input
+              value={month}
+              onChange={handleInput}
+              name="month"
+              type="number"
+            />
           </label>
           <label>
             YEAR
-            <input type="number" />
+            <input
+              value={year}
+              onChange={handleInput}
+              name="year"
+              type="number"
+            />
           </label>
           <button>
             <img src="/icon-arrow.svg" />
