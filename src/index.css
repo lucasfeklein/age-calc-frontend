@@ -51,7 +51,7 @@ input {
   padding: 12px;
   font-weight: 700;
   font-size: 25px;
-  width: 130px;
+  width: 120px;
   margin-top: 8px;
 }
 
@@ -88,10 +88,44 @@ button {
   position: absolute;
   bottom: -40px;
   right: 0;
-
   cursor: pointer;
 }
 
 button:hover {
   background-color: black;
+}
+
+@media (max-width: 736px) {
+  .calc-container {
+    margin: 0 15px;
+  }
+
+  .input-container {
+    padding-bottom: 70px;
+  }
+
+  .text-container {
+    margin-top: 70px;
+  }
+
+  h2 {
+    font-size: 65px;
+    line-height: 70px;
+  }
+
+  input {
+    width: 100px;
+  }
+
+  button {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  button img {
+    width: 25px;
+  }
 }
