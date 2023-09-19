@@ -16,6 +16,9 @@ body {
 
 .calc-container {
   background-color: white;
+  border-radius: 20px;
+  border-bottom-right-radius: 100px;
+  padding: 40px;
 }
 
 .input-container {
