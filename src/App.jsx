@@ -15,6 +15,9 @@ function App() {
             YEAR
             <input type="number" />
           </label>
+          <button>
+            <img src="/icon-arrow.svg" />
+          </button>
         </div>
         <div className="text-container">
           <h2>
