@@ -35,11 +35,12 @@ function App() {
   const validateInput = (name, value) => {
     switch (name) {
       case "day":
-        // Validate day input (1 to 31)
+        // Validate day input based on the selected month and year
+        const maxDays = new Date(year, month, 0).getDate();
         return (
           /^\d{1,2}$/.test(value) &&
           parseInt(value, 10) >= 1 &&
-          parseInt(value, 10) <= 31
+          parseInt(value, 10) <= maxDays
         );
 
       case "month":
@@ -107,6 +108,7 @@ function App() {
         year: isValidYear,
       });
     } else {
+      setCalcObj({ years: null, months: null, days: null });
       setValidation({
         valid: false,
         day: isValidDay,
@@ -174,13 +176,22 @@ function App() {
         </div>
         <div className="text-container">
           <h2>
-            <span>{calcObj.years ? calcObj.years : "--"} </span>years
+            <span>
+              {calcObj.years || calcObj.years === 0 ? calcObj.years : "--"}{" "}
+            </span>
+            years
           </h2>
           <h2>
-            <span>{calcObj.months ? calcObj.months : "--"} </span>months
+            <span>
+              {calcObj.months || calcObj.months === 0 ? calcObj.months : "--"}{" "}
+            </span>
+            months
           </h2>
           <h2>
-            <span>{calcObj.days ? calcObj.days : "--"} </span>days
+            <span>
+              {calcObj.days || calcObj.days === 0 ? calcObj.days : "--"}{" "}
+            </span>
+            days
           </h2>
         </div>
       </div>
